@@ -81,6 +81,7 @@ func (b *Broker) CreateChannel(req stubs.ChannelRequest, res *stubs.StatusReport
 }
 
 func (b *Broker) Subscribe(req stubs.Subscription, res *stubs.StatusReport) (err error) {
+	fmt.Println("yooo")
 	err = subscribe(req.Topic, req.FactoryAddress, req.Callback)
 	if err != nil {
 		res.Message = "Error during subscription"
